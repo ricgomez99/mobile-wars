@@ -1,4 +1,4 @@
-import { FilmType } from "../../types";
+import { FilmType } from "@/types";
 
 export const mapFilmData = (data: FilmType[]) =>
   data &&

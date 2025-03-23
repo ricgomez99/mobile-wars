@@ -14,3 +14,9 @@ export type FilmType = {
   created: string;
   edited: string;
 };
+
+export interface FilmCardProps {
+  titulo: string;
+  director: string;
+  fecha_lanzamiento: string;
+}
