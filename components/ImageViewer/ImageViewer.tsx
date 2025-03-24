@@ -8,9 +8,13 @@ export default function ImageViewer({ imgSource }: ImageProps) {
 
 const styles = StyleSheet.create({
   image: {
-    width: 35,
+    width: 80,
     aspectRatio: 1 / 1,
-    objectFit: "contain",
+    objectFit: "scale-down",
+    resizeMode: "contain",
+    borderColor: "#eeee",
+    borderStyle: "solid",
+    borderWidth: 1,
     borderRadius: 8,
   },
 });

@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { FilmCardProps } from "@/types";
 import ImageViewer from "@/components/ImageViewer/ImageViewer";
+import FilmsDescription from "@/components/Texts/Cards/FilmsDescription";
 
 const placeholderImage = require("@/assets/images/star-wars.svg");
 
@@ -16,12 +17,16 @@ export default function FilmCard({
         <Text testID="title" style={styles.card_container_title}>
           {titulo}
         </Text>
-        <Text testID="director" style={styles.card_container_details}>
-          {director}
-        </Text>
-        <Text testID="release_date" style={styles.card_container_details}>
-          {fecha_lanzamiento}
-        </Text>
+        <FilmsDescription
+          testId="director"
+          label="Director"
+          description={director}
+        />
+        <FilmsDescription
+          testId="release_date"
+          label="F.lanzamiento"
+          description={fecha_lanzamiento}
+        />
       </View>
     </View>
   );
@@ -29,30 +34,28 @@ export default function FilmCard({
 
 const styles = StyleSheet.create({
   card_container: {
-    flex: 1,
+    flexGrow: 0,
+    flexShrink: 1,
     flexDirection: "row",
+    maxHeight: "auto",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: 20,
-    padding: 10,
+    gap: 24,
+    padding: 16,
     backgroundColor: "#f9f9f9",
     borderRadius: 16,
+    borderWidth: 2,
+    borderStyle: "solid",
     borderColor: "#eeee",
-    textAlign: "left",
-    width: 100,
   },
   card_container_text: {
     flex: 1,
     flexDirection: "column",
-    gap: 10,
+    gap: 5,
   },
   card_container_title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
     color: "#181C14",
-  },
-  card_container_details: {
-    fontSize: 16,
-    color: "#7F8487",
   },
 });

@@ -21,9 +21,6 @@ export default function FilmsWrapper() {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between",
     gap: 14,
-    width: 100,
   },
 });

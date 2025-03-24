@@ -5,7 +5,7 @@ import FilmsWrapper from "@/components/Wrapper/FilmsWrapper/FilmsWrapper";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.titleContainer}>
+    <View style={styles.container}>
       <ThemedText type="title">Hello World!</ThemedText>
       <FilmsWrapper />
     </View>
@@ -13,20 +13,12 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+    justifyContent: "center",
     flexDirection: "column",
-    alignItems: "center",
     gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
+    marginInline: 20,
+    paddingTop: 40,
   },
 });

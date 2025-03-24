@@ -20,3 +20,9 @@ export interface FilmCardProps {
   director: string;
   fecha_lanzamiento: string;
 }
+
+export interface FilmDescriptionProps {
+  label: string;
+  description: string;
+  testId: string;
+}
