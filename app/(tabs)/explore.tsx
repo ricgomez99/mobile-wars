@@ -1,37 +1,20 @@
 import { StyleSheet } from "react-native";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { IconSymbol } from "@/components/ui/IconSymbol";
+import CharactersWrapper from "@/components/Wrapper/CharactersWrapper/CharactersWrapper";
 
 export default function ExploreScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: "#D0D0D0", dark: "#353636" }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Buscador</ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ThemedView style={styles.titleContainer}>
+      <CharactersWrapper />
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: "#808080",
-    bottom: -90,
-    left: -35,
-    position: "absolute",
-  },
   titleContainer: {
-    flexDirection: "row",
+    flex: 1,
+    flexDirection: "column",
     gap: 8,
+    paddingTop: 40,
   },
 });

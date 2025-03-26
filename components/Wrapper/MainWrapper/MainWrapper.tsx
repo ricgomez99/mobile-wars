@@ -9,5 +9,6 @@ const styles = StyleSheet.create({
   wrapper: {
     flexGrow: 0,
     flexShrink: 1,
+    marginHorizontal: 20,
   },
 });
