@@ -1,9 +1,10 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View } from "react-native";
 import { TabsOptions } from "@/types";
 import { useState } from "react";
 import { tabsContent } from "@/constants/tabsContent";
 import TabsButton from "../Buttons/TabsButton/TabsButton";
 import FilmsWrapper from "../Wrapper/FilmsWrapper/FilmsWrapper";
+import PlanetsWrapper from "../Wrapper/PlanetsWrapper/PlanetsWrapper";
 
 export default function Tabs() {
   const [currentTab, setCurrentTab] = useState<TabsOptions>(TabsOptions.Films);
@@ -15,11 +16,11 @@ export default function Tabs() {
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
       />
-      <View>
+      <View style={{ flex: 1 }}>
         {currentTab === TabsOptions.Films ? (
           <FilmsWrapper />
         ) : (
-          <Text style={{ color: "#f9f9f9" }}>Content 2</Text>
+          <PlanetsWrapper />
         )}
       </View>
     </>

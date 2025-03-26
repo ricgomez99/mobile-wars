@@ -14,3 +14,12 @@ export type PlanetType = {
   created: string;
   edited: string;
 };
+
+export interface PlanetCardProps {
+  nombre: string;
+  diametro: string;
+  gravedad: string;
+  poblacion: string;
+  clima: string;
+  terreno: string;
+}

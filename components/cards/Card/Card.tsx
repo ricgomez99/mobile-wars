@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     flexDirection: "row",
     maxHeight: "auto",
-    justifyContent: "space-between",
     alignItems: "center",
     padding: 16,
     gap: 16,
