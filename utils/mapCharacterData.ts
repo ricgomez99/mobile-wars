@@ -1,4 +1,4 @@
-import { CharacterType } from "../../types";
+import { CharacterType } from "@/types";
 
 export const mapCharacterData = (data: CharacterType[]) =>
   data &&

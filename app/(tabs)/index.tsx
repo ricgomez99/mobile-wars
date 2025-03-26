@@ -9,7 +9,6 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <ThemedText type="title">Hello World!</ThemedText>
       <Tabs />
-      {/* <FilmsWrapper /> */}
     </View>
   );
 }
@@ -19,7 +18,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     gap: 8,
-    marginInline: 20,
     paddingTop: 40,
   },
 });

@@ -16,3 +16,17 @@ export type CharacterType = {
   created: string;
   edited: string;
 };
+
+export interface CharCardProps {
+  nombre: string;
+  lugar_de_origen: string;
+}
+
+export type CharacterData = {
+  nombre: string;
+  nacimiento: string;
+  genero: string;
+  altura: string;
+  color_pelo: string;
+  lugar_de_origen: string;
+};
