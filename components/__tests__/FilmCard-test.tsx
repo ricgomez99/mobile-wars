@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react-native";
-import FilmCard from "../cards/FilmCard/FilmCard";
+import FilmCard from "../Cards/FilmCard/FilmCard";
 
 describe("<FilmCard />", () => {
   it("should render", () => {

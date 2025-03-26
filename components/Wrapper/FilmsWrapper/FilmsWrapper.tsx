@@ -1,26 +1,28 @@
-import { View, StyleSheet } from "react-native";
-import FilmCard from "@/components/cards/FilmCard/FilmCard";
+import { View, StyleSheet, FlatList } from "react-native";
 import { filmMock } from "@/constants/films-mock";
+import FilmCard from "@/components/Cards/FilmCard/FilmCard";
 
 export default function FilmsWrapper() {
   return (
     <View style={styles.wrapper}>
-      {filmMock &&
-        filmMock.map((film) => (
+      <FlatList
+        data={filmMock}
+        renderItem={({ item }) => (
           <FilmCard
-            key={film.id}
-            titulo={film.titulo}
-            director={film.director}
-            fecha_lanzamiento={film.fecha_lanzamiento}
+            key={item.id}
+            titulo={item.titulo}
+            director={item.director}
+            fecha_lanzamiento={item.fecha_lanzamiento}
           />
-        ))}
+        )}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
-    gap: 14,
+    flexGrow: 0,
+    flexShrink: 1,
   },
 });
