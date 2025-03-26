@@ -1,10 +1,11 @@
-import { View, StyleSheet, FlatList } from "react-native";
+import { FlatList } from "react-native";
 import { filmMock } from "@/constants/films-mock";
 import FilmCard from "@/components/Cards/FilmCard/FilmCard";
+import MainWrapper from "../MainWrapper/MainWrapper";
 
 export default function FilmsWrapper() {
   return (
-    <View style={styles.wrapper}>
+    <MainWrapper>
       <FlatList
         data={filmMock}
         renderItem={({ item }) => (
@@ -15,14 +16,8 @@ export default function FilmsWrapper() {
             fecha_lanzamiento={item.fecha_lanzamiento}
           />
         )}
+        showsVerticalScrollIndicator={false}
       />
-    </View>
+    </MainWrapper>
   );
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    flexGrow: 0,
-    flexShrink: 1,
-  },
-});

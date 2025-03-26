@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react-native";
+import { render } from "@testing-library/react-native";
 import FilmsWrapper from "../Wrapper/FilmsWrapper/FilmsWrapper";
 import { filmMock } from "@/constants/films-mock";
 

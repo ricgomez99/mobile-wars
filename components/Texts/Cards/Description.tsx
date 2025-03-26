@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 import { FilmDescriptionProps } from "@/types";
 
-export default function FilmsDescription({
+export default function Description({
   label,
   description,
   testId,
@@ -17,6 +17,7 @@ export default function FilmsDescription({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    textOverflow: "elipsis",
     gap: 8,
   },
   label: {

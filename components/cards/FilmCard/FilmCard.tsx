@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { FilmCardProps } from "@/types";
 import ImageViewer from "@/components/ImageViewer/ImageViewer";
-import FilmsDescription from "@/components/Texts/Cards/FilmsDescription";
+import Description from "@/components/Texts/Cards/Description";
 import Card from "../Card/Card";
 
 const placeholderImage = require("@/assets/images/star-wars.svg");
@@ -18,12 +18,12 @@ export default function FilmCard({
         <Text testID="title" style={styles.card_container_title}>
           {titulo}
         </Text>
-        <FilmsDescription
+        <Description
           testId="director"
           label="Director"
           description={director}
         />
-        <FilmsDescription
+        <Description
           testId="release_date"
           label="F.lanzamiento"
           description={fecha_lanzamiento}
