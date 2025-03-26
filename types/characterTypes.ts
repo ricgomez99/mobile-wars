@@ -30,3 +30,8 @@ export type CharacterData = {
   color_pelo: string;
   lugar_de_origen: string;
 };
+
+export type CharDetails = Pick<
+  CharacterData,
+  "nacimiento" | "genero" | "altura" | "color_pelo"
+>;
