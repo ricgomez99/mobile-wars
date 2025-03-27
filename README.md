@@ -21,13 +21,22 @@ The application consumes the SWAPI API for rendering and searching Star Wars cha
    > [!NOTE]
    > Make sure you can run **expo cli** commands
 
-3. Start the app
+3. Setup a public env variable in a `.env` file for the public API ('https://swapi.py4e.com/api/'):
+
+```.env
+EXPO_PUBLIC_API_URL=https://swapi.py4e.com/api/
+```
+
+> [!TIP]
+> This env variables is essential for the app to work and fetch the data properly
+
+4. Start the app
 
    ```bash
     npx expo start
    ```
 
-4. Scan the QR code displayed on the command line
+5. Scan the QR code displayed on the command line
 
 In the output, you'll find options to open the app in a
 
