@@ -17,7 +17,7 @@ export default function Description({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    textOverflow: "elipsis",
+    flexWrap: "wrap",
     gap: 8,
   },
   label: {

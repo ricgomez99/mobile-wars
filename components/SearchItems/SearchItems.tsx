@@ -1,38 +1,35 @@
 import { useState, useEffect } from "react";
 import { TextInput, FlatList, StyleSheet, View } from "react-native";
 import _ from "lodash";
-import { charsMocks } from "@/constants/chars-mocks";
 import CharCard from "../Cards/CharCard/CharCard";
 import { CharacterData } from "@/types";
+import { useQueryCharacters } from "@/hooks/characters";
+import Loader from "../Loader/Loader";
 
 export default function SearchItems() {
-  useEffect(() => {
-    setCharacters(charsMocks);
-    setSearchData(charsMocks);
-  }, []);
-
+  const { characters: data, isLoading, isSuccess } = useQueryCharacters();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [searchData, setSearchData] = useState<CharacterData[]>([]);
   const [characters, setCharacters] = useState<CharacterData[]>([]);
+
+  useEffect(() => {
+    if (isSuccess && data) {
+      setCharacters(data);
+      setSearchData(data);
+    }
+  }, [data, isSuccess]);
 
   const handleQuery = (query: string) => {
     setSearchQuery(query);
     const formattedQuery = query.toLowerCase();
     const filteredData = _.filter(searchData, (char) => {
-      return matchCharacter(char.nombre, char.lugar_de_origen, formattedQuery);
+      return matchCharacter(char.nombre, formattedQuery);
     });
     setCharacters(filteredData);
   };
 
-  const matchCharacter = (
-    nombre: string,
-    lugar_de_origen: string,
-    query: string
-  ) => {
-    return (
-      nombre.toLowerCase().includes(query) ||
-      lugar_de_origen.toLowerCase().includes(query)
-    );
+  const matchCharacter = (nombre: string, query: string) => {
+    return nombre.toLowerCase().includes(query);
   };
 
   return (
@@ -47,15 +44,11 @@ export default function SearchItems() {
         onChangeText={(query) => handleQuery(query)}
         style={styles.search_bar}
       />
+      {isLoading && <Loader />}
       <FlatList
         data={characters}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({ item }) => (
-          <CharCard
-            nombre={item.nombre}
-            lugar_de_origen={item.lugar_de_origen}
-          />
-        )}
+        renderItem={({ item }) => <CharCard nombre={item.nombre} />}
         showsVerticalScrollIndicator={false}
       />
     </View>
@@ -64,6 +57,8 @@ export default function SearchItems() {
 
 const styles = StyleSheet.create({
   container: {
+    flexGrow: 0,
+    flexShrink: 1,
     marginVertical: 20,
     gap: 16,
   },

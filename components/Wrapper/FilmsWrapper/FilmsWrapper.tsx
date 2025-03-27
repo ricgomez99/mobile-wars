@@ -1,13 +1,16 @@
 import { FlatList } from "react-native";
-import { filmMock } from "@/constants/films-mock";
 import FilmCard from "@/components/Cards/FilmCard/FilmCard";
 import MainWrapper from "../MainWrapper/MainWrapper";
+import { useQueryFilms } from "@/hooks/films";
+import Loader from "@/components/Loader/Loader";
 
 export default function FilmsWrapper() {
+  const { isLoading, films } = useQueryFilms();
   return (
     <MainWrapper>
+      {isLoading && <Loader />}
       <FlatList
-        data={filmMock}
+        data={films}
         renderItem={({ item }) => (
           <FilmCard
             key={item.id}

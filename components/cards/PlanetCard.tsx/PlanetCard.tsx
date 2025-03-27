@@ -21,7 +21,14 @@ export default function PlanetCard({
         <Text testID="title" style={styles.card_title}>
           {nombre}
         </Text>
-        <View style={{ flexDirection: "row", gap: 5 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            gap: 5,
+            flexWrap: "wrap",
+            flexGrow: 0,
+            flexShrink: 1,
+          }}>
           <Description
             testId="diameter"
             label="Diametro"
@@ -48,7 +55,10 @@ export default function PlanetCard({
 
 const styles = StyleSheet.create({
   card_text: {
+    flexGrow: 0,
+    flexShrink: 1,
     flexDirection: "column",
+
     gap: 8,
   },
 

@@ -18,11 +18,11 @@ export type FilmType = {
 export interface FilmCardProps {
   titulo: string;
   director: string;
-  fecha_lanzamiento: string;
+  fecha_lanzamiento: Date | string;
 }
 
 export interface FilmDescriptionProps {
-  label: string;
-  description: string;
-  testId: string;
+  label: string | undefined;
+  description: string | undefined;
+  testId: string | undefined;
 }

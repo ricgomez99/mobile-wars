@@ -1,3 +1,5 @@
+import React from "react";
+
 export type CharacterType = {
   name: string;
   birth_year: string;
@@ -19,7 +21,15 @@ export type CharacterType = {
 
 export interface CharCardProps {
   nombre: string;
-  lugar_de_origen: string;
+}
+
+export interface CharProviderProps {
+  children: React.ReactNode;
+}
+
+export interface CharModalProps {
+  showModal: boolean;
+  closeModal: () => void;
 }
 
 export type CharacterData = {
@@ -29,4 +39,12 @@ export type CharacterData = {
   altura: string;
   color_pelo: string;
   lugar_de_origen: string;
+};
+
+export type CharDetails = Omit<CharacterData, "nombre" | "lugar_de_origen">;
+
+export type CharContextType = {
+  character: string;
+  saveCharacter: (name: string) => void;
+  getCharacter: () => string;
 };
