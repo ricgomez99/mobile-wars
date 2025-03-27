@@ -1,11 +1,14 @@
 import { StyleSheet } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import CharactersWrapper from "@/components/Wrapper/CharactersWrapper/CharactersWrapper";
+import { CharContextProvider } from "@/hooks/context/CharsContextProvider";
 
 export default function ExploreScreen() {
   return (
     <ThemedView style={styles.titleContainer}>
-      <CharactersWrapper />
+      <CharContextProvider>
+        <CharactersWrapper />
+      </CharContextProvider>
     </ThemedView>
   );
 }

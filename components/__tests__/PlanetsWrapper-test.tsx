@@ -1,11 +1,11 @@
 import { render } from "@testing-library/react-native";
-import PlanetsWrapper from "../Wrapper/PlanetsWrapper/PlanetsWrapper";
 import { JSX } from "react";
+import WrapperMockPlanet from "../WrapperMock/WrapperMockPlanet";
 
 describe("<PlanetsWrapper />", () => {
   let wrapper: JSX.Element;
   beforeEach(() => {
-    wrapper = <PlanetsWrapper />;
+    wrapper = <WrapperMockPlanet />;
   });
 
   it("should render", () => {

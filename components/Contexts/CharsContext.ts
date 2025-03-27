@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { CharDetails } from "@/types";
+import { CharContextType } from "@/types";
 
-const CharContext = createContext<CharDetails | undefined>(undefined);
+const CharContext = createContext<CharContextType | undefined>(undefined);
 export default CharContext;
